@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../assets/colors';
+import { breakpoints } from '../../common/constants';
 import Copyright from '../Copyright';
 import allTheRoutes from '../routes/allTheRoutes';
 import SidebarItem from './SidebarItem';
@@ -34,5 +35,9 @@ const StyledSidebar = styled.nav`
   a.active {
     background-color: ${colors.darkGey};
     font-weight: bold;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 50px;
   }
 `;

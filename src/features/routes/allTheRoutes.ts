@@ -16,7 +16,7 @@ export default [
   {
     path: '/contacts',
     name: 'contact me',
-    icon: 'address-book',
+    icon: 'id-card',
     component: WorkingOnIT,
   },
   {
