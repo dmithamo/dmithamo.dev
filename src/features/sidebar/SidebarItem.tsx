@@ -11,7 +11,7 @@ export type SidebarItemProps = {
 };
 export default function SidebarItem({ path, name, icon }: SidebarItemProps) {
   return (
-    <StyledSidebarItem activeClassName="active" to={path}>
+    <StyledSidebarItem exact activeClassName="active" to={path}>
       <FontAwesomeIcon icon={icon} />
       <span>{name}</span>
     </StyledSidebarItem>

@@ -2,7 +2,7 @@ import WorkingOnIT from '../TempPage';
 
 export default [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
     icon: 'home',
     component: WorkingOnIT,

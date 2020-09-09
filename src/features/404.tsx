@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <Styled404Page>
       You must be lost.&nbsp;
-      <NavLink to="/home">Let me take you home</NavLink>
+      <NavLink to="/">Let me take you home</NavLink>
     </Styled404Page>
   );
 }
