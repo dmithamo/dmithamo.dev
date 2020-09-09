@@ -1,24 +1,11 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './features/routes/Routes';
 
-export default function Intro() {
+export default function App() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '100vh',
-      }}
-    >
-      &copy;2020&nbsp;
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://github.com/dmithamo"
-      >
-        dmithamo
-      </a>
-    </div>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   );
 }
