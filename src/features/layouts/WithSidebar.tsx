@@ -20,10 +20,6 @@ export default function WithSidebar({
 
 const StyledWithSidebar = styled.div`
   display: flex;
-
-  nav {
-    width: 50px;
-  }
   section {
     flex-grow: 1;
   }
