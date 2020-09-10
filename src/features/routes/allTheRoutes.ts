@@ -8,21 +8,21 @@ export default [
     component: WorkingOnIT,
   },
   {
-    path: '/about',
-    name: 'about me',
-    icon: 'user-alt',
-    component: WorkingOnIT,
-  },
-  {
-    path: '/contacts',
-    name: 'contact me',
-    icon: 'id-card',
+    path: '/portfolio',
+    name: 'portfolio',
+    icon: 'code-branch',
     component: WorkingOnIT,
   },
   {
     path: '/blog',
-    name: 'blog',
+    name: 'thoughts on stuff',
     icon: 'blog',
+    component: WorkingOnIT,
+  },
+  {
+    path: '/contacts',
+    name: 'get in touch',
+    icon: 'address-book',
     component: WorkingOnIT,
   },
 ];

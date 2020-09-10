@@ -20,22 +20,29 @@ export default function SidebarItem({ path, name, icon }: SidebarItemProps) {
 
 const StyledSidebarItem = styled(NavLink)`
   text-decoration: none;
-  color: black;
+  color: ${colors.black};
+  padding: 0.3em 0;
+  margin-bottom: 1em;
   display: flex;
-  align-items: center;
   justify-content: flex-start;
   padding: 0.5em 0;
   width: 100%;
   margin: 0 auto;
   margin-bottom: 1em;
   svg {
-    margin-right: 1em;
-    padding: 0.4em;
+    margin-right: 0.3em;
+    font-size: 1.3em;
+    color: ${colors.lightBlack};
   }
   span {
     flex-grow: 1;
   }
   :hover {
-    background-color: ${colors.darkGey};
+    border-bottom: 2px solid ${colors.darkGrey};
+    background-color: ${colors.grey};
+    opacity: 1;
+    svg {
+      color: ${colors.black};
+    }
   }
 `;

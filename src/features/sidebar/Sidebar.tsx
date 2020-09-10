@@ -1,17 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../assets/colors';
+import Copyright from '../../common/components/Copyright';
 import { breakpoints } from '../../common/constants';
-import Copyright from '../Copyright';
 import allTheRoutes from '../routes/allTheRoutes';
 import SidebarItem from './SidebarItem';
 
 export default function Sidebar() {
   return (
     <StyledSidebar>
-      {allTheRoutes.map((r) => (
-        <SidebarItem key={r.path} path={r.path} name={r.name} icon={r.icon} />
-      ))}
+      <div className="home">
+        <SidebarItem
+          key={allTheRoutes[0].path}
+          path={allTheRoutes[0].path}
+          name={allTheRoutes[0].name}
+          icon={allTheRoutes[0].icon}
+        />
+      </div>
+      <div className="rest">
+        {allTheRoutes.slice(1).map((r) => (
+          <SidebarItem key={r.path} path={r.path} name={r.name} icon={r.icon} />
+        ))}
+      </div>
 
       <Copyright />
     </StyledSidebar>
@@ -19,25 +29,43 @@ export default function Sidebar() {
 }
 
 const StyledSidebar = styled.nav`
-  height: 100vh;
-  background-color: ${colors.grey};
   padding: 0.5em;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 200px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  width: 100%;
+
+  div.home {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  div.rest {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+  }
 
   a.active {
-    background-color: ${colors.darkGey};
-    font-weight: bold;
+    border-bottom: 2px solid ${colors.black};
+    background-color: ${colors.grey};
+    opacity: 1;
+    svg {
+      color: ${colors.black};
+    }
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    width: 50px;
+    /* width: 50px; */
+    div.home,
+    div.rest {
+      width: fit-content;
+      flex-grow: 1;
+    }
   }
 `;

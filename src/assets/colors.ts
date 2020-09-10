@@ -1,6 +1,8 @@
 export default {
-  black: '#00000080',
+  black: '#000000',
+  lightBlack: '#00000097',
   white: '#ffffff80',
+  offWhite: '#ffffff50',
   grey: '#cccccc70',
-  darkGey: '#cccccc99',
+  darkGrey: '#cccccc99',
 };

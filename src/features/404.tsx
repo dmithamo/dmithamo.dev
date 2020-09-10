@@ -28,7 +28,7 @@ const Styled404Page = styled.div`
     border-radius: 15px;
     font-weight: bold;
     :hover {
-      background-color: ${colors.darkGey};
+      background-color: ${colors.darkGrey};
     }
   }
 `;
