@@ -29,7 +29,7 @@ export default function Sidebar() {
 }
 
 const StyledSidebar = styled.nav`
-  padding: 0.5em;
+  padding: 0.5em 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

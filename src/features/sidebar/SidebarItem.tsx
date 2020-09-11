@@ -22,7 +22,6 @@ const StyledSidebarItem = styled(NavLink)`
   text-decoration: none;
   color: ${colors.black};
   padding: 0.3em 0;
-  margin-bottom: 1em;
   display: flex;
   justify-content: flex-start;
   padding: 0.5em 0;

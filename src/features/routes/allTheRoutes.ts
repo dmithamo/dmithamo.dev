@@ -1,3 +1,4 @@
+import ContactCard from '../contacts-page/ContactCard';
 import WorkingOnIT from '../TempPage';
 
 export default [
@@ -23,6 +24,6 @@ export default [
     path: '/contacts',
     name: 'get in touch',
     icon: 'address-book',
-    component: WorkingOnIT,
+    component: ContactCard,
   },
 ];
