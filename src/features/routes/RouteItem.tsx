@@ -5,15 +5,13 @@ import WithSidebar from '../layouts/WithSidebar';
 /* eslint-disable no-undef */
 export type RouteItemProps = {
   path: string;
-  children?: JSX.Element[] | JSX.Element;
-  component?: any;
+  component: any;
   customLayout?: any;
   exact: boolean;
 };
 
 export default function RouteItem({
   path,
-  children,
   component: Component,
   customLayout: Layout,
   exact,
@@ -21,9 +19,13 @@ export default function RouteItem({
   return (
     <Route path={path} exact={exact}>
       {Layout ? (
-        <Layout>{<Component /> || children}</Layout>
+        <Layout>
+          <Component />
+        </Layout>
       ) : (
-        <WithSidebar>{<Component /> || children}</WithSidebar>
+        <WithSidebar>
+          <Component />
+        </WithSidebar>
       )}
     </Route>
   );

@@ -19,7 +19,9 @@ export default function WithSidebar({
 }
 
 const StyledWithSidebar = styled.div`
+  margin: 1em 0;
   display: flex;
+  flex-direction: column;
   section {
     flex-grow: 1;
   }

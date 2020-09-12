@@ -1,16 +1,26 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fab, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import {
   faAddressBook,
   faBlog,
+  faCodeBranch,
+  faEnvelopeOpen,
   faHome,
-  faUserAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-library.add(fab, faHome, faAddressBook, faBlog, faUserAlt);
+library.add(
+  fab,
+  faHome,
+  faAddressBook,
+  faBlog,
+  faCodeBranch,
+  faGithub,
+  faLinkedin,
+  faEnvelopeOpen,
+);
 
 ReactDOM.render(
   <React.StrictMode>
