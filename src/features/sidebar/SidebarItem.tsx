@@ -3,6 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import colors from '../../assets/colors';
+import { breakpoints } from '../../common/constants';
 
 export type SidebarItemProps = {
   path: string;
@@ -21,13 +22,13 @@ export default function SidebarItem({ path, name, icon }: SidebarItemProps) {
 const StyledSidebarItem = styled(NavLink)`
   text-decoration: none;
   color: ${colors.black};
-  padding: 0.3em 0;
   display: flex;
-  justify-content: flex-start;
-  padding: 0.5em 0;
-  width: 100%;
-  margin: 0 auto;
-  margin-bottom: 1em;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  width: fit-content;
+  border-bottom: 2px solid ${colors.white};
+
   svg {
     margin-right: 0.3em;
     font-size: 1.3em;
@@ -42,6 +43,15 @@ const StyledSidebarItem = styled(NavLink)`
     opacity: 1;
     svg {
       color: ${colors.black};
+    }
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    span {
+      display: none;
+    }
+    svg {
+      margin: 0;
     }
   }
 `;

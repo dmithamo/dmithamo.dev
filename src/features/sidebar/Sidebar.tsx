@@ -37,7 +37,7 @@ const StyledSidebar = styled.nav`
   width: 100%;
 
   div.home {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -61,11 +61,9 @@ const StyledSidebar = styled.nav`
   }
 
   @media (max-width: ${breakpoints.smallLaptop}) {
-    /* width: 50px; */
     div.home,
     div.rest {
       width: fit-content;
-      flex-grow: 1;
     }
   }
 `;
