@@ -60,7 +60,7 @@ const StyledSidebar = styled.nav`
     }
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.smallLaptop}) {
     /* width: 50px; */
     div.home,
     div.rest {

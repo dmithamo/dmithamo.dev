@@ -1,9 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 /* eslint-disable no-undef */
 import React from 'react';
 import styled from 'styled-components';
 import colors from '../../assets/colors';
+import { breakpoints } from '../../common/constants';
 import contactInfo from './contactInfo';
+import ExternalLink from './ExternalLink';
 
 export default function ContactCard(): JSX.Element {
   return (
@@ -13,42 +14,9 @@ export default function ContactCard(): JSX.Element {
         <p className="subscript">Software Engineer</p>
       </div>
       <div className="card card-back">
-        <a href="mailto:dennisbmithamo@gmail.com" className="contact-link">
-          <FontAwesomeIcon icon="envelope-open" />
-          <p className="domain">&lt;a href=&quot;mailto:&quot;&gt;</p>
-          <p className="username">{contactInfo.emailAddress}</p>
-          <p className="domain">&lt;/a&gt;</p>
-        </a>
-
-        <a
-          href={[contactInfo.github.url, contactInfo.github.username].join('')}
-          className="contact-link"
-        >
-          <FontAwesomeIcon icon={['fab', 'github']} />
-          <p className="domain">
-            &lt;a href=&quot;
-            {contactInfo.github.url}
-            &quot;&gt;
-          </p>
-          <p className="username">{contactInfo.github.username}</p>
-          <p className="domain">&lt;/a&gt;</p>
-        </a>
-
-        <a
-          href={[contactInfo.linkedIn.url, contactInfo.linkedIn.username].join(
-            '',
-          )}
-          className="contact-link"
-        >
-          <FontAwesomeIcon icon={['fab', 'linkedin']} />
-          <p className="domain">
-            &lt;a href=&quot;
-            {contactInfo.linkedIn.url}
-            &quot;&gt;
-          </p>
-          <p className="username">{contactInfo.linkedIn.username}</p>
-          <p className="domain">&lt;/a&gt;</p>
-        </a>
+        <ExternalLink link={contactInfo.emailAddress} icon="envelope-open" />
+        <ExternalLink link={contactInfo.github} icon={['fab', 'github']} />
+        <ExternalLink link={contactInfo.linkedIn} icon={['fab', 'linkedin']} />
       </div>
     </StyledContactCard>
   );
@@ -57,26 +25,30 @@ export default function ContactCard(): JSX.Element {
 const StyledContactCard = styled.div`
   height: 90vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 60%;
+  margin: auto;
 
   div.card {
-    box-shadow: 1px 2px 5px 1px ${colors.veryLightBlack};
+    box-shadow: 1px 2px 5px 1px ${colors.lightBlack};
     height: 25vh;
-    width: 48%;
-    margin: auto;
+    width: 450px;
+    height: 280px;
+    padding: 1em;
+    font-weight: 700;
+    border-radius: 10px;
+  }
 
-    p.name {
-      font-size: 3em;
-      font-weight: 700;
-    }
+  p.name {
+    font-size: 3em;
+    font-weight: 700;
+  }
 
-    p.subscript {
-      opacity: 0.8;
-      font-size: 0.8em;
-      margin: 0;
-    }
+  p.subscript {
+    font-size: 1.3em;
+    margin: 0;
+    color: ${colors.offWhite};
   }
 
   div.card-front {
@@ -95,8 +67,10 @@ const StyledContactCard = styled.div`
     align-items: flex-start;
     background-color: ${colors.white};
     color: ${colors.black};
+  }
 
-    div.contact-link {
-    }
+  @media (max-width: ${breakpoints.smallLaptop}) {
+    width: 100%;
+    flex-direction: column;
   }
 `;
